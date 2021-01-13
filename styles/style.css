@@ -72,6 +72,7 @@ h2 {
 
 .main-logo {
     animation: pulse 5s infinite ease-in-out;
+
 }
 
 header img {
@@ -117,3 +118,12 @@ footer {
     }
 
   }
+.inline{
+    display: inline;
+}
+.main-section{
+    box-sizing: border-box;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    padding: 10%;
+}

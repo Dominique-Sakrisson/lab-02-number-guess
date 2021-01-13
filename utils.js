@@ -7,7 +7,8 @@ const threeGuessesleft = 'you have 3 guesses remaining';
 const fourGuessesLeft = 'you have 4 guesses remaining';
 
 export function compareNumbers(guess, correctNumber){
-    if (guess === correctNumber){
+   
+    if (Number(guess) === Number(correctNumber)){
         return 0;
     } else if (guess < correctNumber){
         return -1;

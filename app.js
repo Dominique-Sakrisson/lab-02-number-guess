@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 
-import { compareNumbers, setGuessesLeftDisplay, calcRemainingGuesses } from "./utils.js";
+import { compareNumbers, setGuessesLeftDisplay } from "./utils.js";
 
 // initialize state
 //get the input element for user's guess
@@ -15,16 +15,10 @@ const winLoseDisplay = document.getElementById('win-lose-display');
 const retryButton = document.getElementById('retry-button');
 //display for the player's guessing being higher or lower than game number
 const highLowDisplay = document.getElementById('high-low-display');
-
 const rightMessage = 'You won the game!';
 const wrongMessage = 'You got it wrong';
 
-// set event listeners to update state and DOM
-
-//creates a random number for the game. 
-
 let timesGuessed = 0;
-
 let gameNumber = Math.ceil(Math.random() * 20).toFixed(0);
 
 console.log(gameNumber);
@@ -48,6 +42,8 @@ submitButton.addEventListener('click', () => {
         setGuessesLeftDisplay(guessesRemaining);
         highLowDisplay.textContent = rightString;
         winLoseDisplay.textContent = rightMessage;
+        userGuess.disabled = true;
+        submitButton.disabled = true;
 
     } else if (compareNumbers(guess, gameNumber) === 1){
         //user guessed wrong, guesses remaining--, change content of winlosedisplay, to lose
@@ -62,7 +58,7 @@ submitButton.addEventListener('click', () => {
         winLoseDisplay.textContent = wrongMessage;
     }
     if (guessesRemaining === 0 && compareNumbers(guess, gameNumber) !== 0){
-        winLoseDisplay.textContent = 'Out of guesses you lose the game.';
+        winLoseDisplay.textContent = 'Out of guesses you lose the game.' + ' My number was ' + gameNumber ;
         //when user has made 4 guesses set the input disabled
         userGuess.disabled = true;
         submitButton.disabled = true;
