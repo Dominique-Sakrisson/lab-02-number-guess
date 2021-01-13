@@ -72,7 +72,7 @@ h2 {
 
 .main-logo {
     animation: pulse 5s infinite ease-in-out;
-
+    margin: 20px 40px;
 }
 
 header img {
@@ -126,4 +126,8 @@ footer {
     background-color: dodgerblue;
     border-radius: 50%;
     padding: 10%;
+}
+.eye-div{
+    display: flex;
+    justify-content: space-between;
 }

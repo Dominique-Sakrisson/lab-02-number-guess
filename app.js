@@ -8,7 +8,7 @@ const userGuess = (document.getElementById('user-guess'));
 //get the submit buttong
 const submitButton = document.getElementById('submit-guess');
 //div that will tell user if their guess was higher or lower than game number
-
+const eyes = document.getElementsByClassName('eye-ball');
 //div to display to user whether they have won or lost the game
 const winLoseDisplay = document.getElementById('win-lose-display');
 //button that will allow user to retry the game with a new number
@@ -44,6 +44,10 @@ submitButton.addEventListener('click', () => {
         winLoseDisplay.textContent = rightMessage;
         userGuess.disabled = true;
         submitButton.disabled = true;
+        eyes[0].classList.add("main-logo");
+        eyes[0].classList.add("main-logo");
+        eyes[1].classList.add("main-logo");
+
 
     } else if (compareNumbers(guess, gameNumber) === 1){
         //user guessed wrong, guesses remaining--, change content of winlosedisplay, to lose
