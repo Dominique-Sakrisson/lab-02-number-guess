@@ -41,11 +41,8 @@ submitButton.addEventListener('click', () => {
     
     timesGuessed++;
     guessesRemaining -= timesGuessed;
- 
-    console.log('remaining ' + guessesRemaining);
-    console.log('tries ' + timesGuessed);
-    console.log('were trying to gifure oiut ' + guess);
-    //compare numbers ===0 numbers are the same 
+
+    //compare if numbers are the same 
     if (compareNumbers(guess, gameNumber) === 0){
         //tell the user they won, change the content of winlosedisplay
         setGuessesLeftDisplay(guessesRemaining);
@@ -55,7 +52,6 @@ submitButton.addEventListener('click', () => {
     } else if (compareNumbers(guess, gameNumber) === 1){
         //user guessed wrong, guesses remaining--, change content of winlosedisplay, to lose
         setGuessesLeftDisplay(guessesRemaining);
-        console.log('insiiiiiiide' + guess);
         highLowDisplay.textContent = highString;
         winLoseDisplay.textContent = wrongMessage;
 
@@ -74,6 +70,21 @@ submitButton.addEventListener('click', () => {
         setGuessesLeftDisplay(guessesRemaining - 1);
         return;
     } 
+    
+});
+
+retryButton.addEventListener('click', () =>{
+    userGuess.disabled = false;
+    submitButton.disabled = false;
+    //reset variables
+    timesGuessed = 0;
+
+    let gameNumber = Math.ceil(Math.random() * 20).toFixed(0);
+    winLoseDisplay.textContent = "";
+    highLowDisplay.textContent = "";
+    setGuessesLeftDisplay();
+  
+
     
 });
  
