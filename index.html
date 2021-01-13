@@ -9,7 +9,7 @@
  
     <link rel="stylesheet" href="styles/style.css">
     
-    <title>Document</title>
+    <title>Rando Number Game</title>
 </head>
 
 <body>
@@ -24,6 +24,18 @@
             <h2>
                 Welcome to Number Guesser!
             </h2>
+            <h3>
+                This game will create a random number, and it is your job as the player to guess the correct number.
+                Player will have 4 chances to guess the correct number, once you use all your guesses you lose the game and may try again.
+                Type in your number guess and then hit the button to check if you guessed the right answer.
+            </h3>
+
+            <input id="user-guess" type="number" placeholder="What is your guess?">
+            <button id="submit-guess">Take your guess</button>
+            <div id="high-low-display">You guess was </div> 
+            <div id="guesses-remaining">You start out with 4 guesses</div>
+            <div id="win-lose-display">this Will display if the user got the right answer or that they lose when all guesses are used</div>
+            <button id="retry-button">Play again</button>
 
             <content>
             
