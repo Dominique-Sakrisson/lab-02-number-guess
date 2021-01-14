@@ -45,7 +45,6 @@ submitButton.addEventListener('click', () => {
         userGuess.disabled = true;
         submitButton.disabled = true;
         eyes[0].classList.add("main-logo");
-        eyes[0].classList.add("main-logo");
         eyes[1].classList.add("main-logo");
 
 
@@ -78,8 +77,10 @@ retryButton.addEventListener('click', () =>{
     submitButton.disabled = false;
     //reset variables
     timesGuessed = 0;
-
-    let gameNumber = Math.ceil(Math.random() * 20).toFixed(0);
+    eyes[0].classList.remove("main-logo");
+    eyes[1].classList.remove("main-logo");
+    gameNumber = Math.ceil(Math.random() * 20).toFixed(0);
+    console.log(gameNumber);
     winLoseDisplay.textContent = "";
     highLowDisplay.textContent = "";
     setGuessesLeftDisplay();
